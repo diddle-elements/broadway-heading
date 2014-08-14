@@ -1,0 +1,43 @@
+<!--
+Broadway Heading
+
+@element broadway-heading
+@demo https://diddledan.github.io/broadway-heading
+-->
+
+<link rel="import" href="../polymer/polymer.html" />
+
+<polymer-element name="broadway-heading" noscript>
+	<template>
+		<style>
+			.heading {
+				width: 50%;
+				margin-left: auto;
+				margin-right: auto;
+				text-align: center;
+				position: relative;
+				padding: 0.2em 0.6em;
+				border: 1px solid #000;
+				-webkit-border-radius: 2em;
+				-moz-border-radius: 2em;
+				-ms-border-radius: 2em;
+				-o-border-radius: 2em;
+				border-radius: 2em;
+			}
+			.heading:before,
+			.heading:after {
+				position: absolute;
+				top: 50%;
+				margin-top: -1px;
+				width: 50%;
+				border-bottom: 1px solid #000;
+				content: "";
+			}
+			.heading:before { right: 100%; }
+			.heading:after { left: 100%; }
+		</style>
+		<div class="heading">
+			<content>Replaced with heading</content>
+		</div>
+	</template>
+</polymer-element>
