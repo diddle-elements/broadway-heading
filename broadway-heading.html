@@ -7,7 +7,7 @@ Broadway Heading
 
 <link rel="import" href="../polymer/polymer.html" />
 
-<polymer-element name="broadway-heading" noscript>
+<polymer-element name="broadway-heading" attributes="color" noscript>
 	<template>
 		<style>
 			.heading {
@@ -23,6 +23,9 @@ Broadway Heading
 				-ms-border-radius: 2em;
 				-o-border-radius: 2em;
 				border-radius: 2em;
+				-webkit-box-sizing: border-box;
+				-moz-box-sizing: border-box;
+				box-sizing: border-box;
 			}
 			.heading:before,
 			.heading:after {
@@ -30,14 +33,14 @@ Broadway Heading
 				top: 50%;
 				margin-top: -1px;
 				width: 50%;
-				border-bottom: 1px solid #000;
+				border-bottom: inherit;
 				content: "";
 			}
 			.heading:before { right: 100%; }
 			.heading:after { left: 100%; }
 		</style>
-		<div class="heading">
-			<content>Replaced with heading</content>
+		<div class="heading" style="color: {{color}}; border-color: {{color}}">
+			<content></content>
 		</div>
 	</template>
 </polymer-element>

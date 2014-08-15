@@ -15,9 +15,12 @@
 		footer {
 			font-size: small;
 		}
-		broadway-heading h1 {
+		#page-title h1 {
 			text-transform: uppercase;
 			font-family: arial, sans-serif;
+			margin: 0;
+		}
+		broadway-heading.example h4 {
 			margin: 0;
 		}
 	</style>
@@ -30,23 +33,45 @@
 	<github-ribbon user="diddledan" repo="broadway-heading" color="red" position="left"></github-ribbon>
 
 	<section>
-		<broadway-heading>
+		<broadway-heading id="page-title" color="white">
 			<h1>Broadway Heading</h1>
 		</broadway-heading>
 		<h2>A web component</h2>
 		<p>The above header is an example of the <code>&lt;broadway-heading&gt;</code> web component</p>
-		<h2>Usage</h2>
+		<h2>Example Usage</h2>
 <warpech-prism language="markup">&lt;html&gt;
 	&lt;head&gt;
-		&lt;script src="path/to/platform.js"&gt;&lt;/script&gt;
-		&lt;link rel="import" href="path/to/broadway-heading.html" /&gt;
+		&lt;script src="path/to/platform.js"&gt;
+		&lt;/script&gt;
+
+		&lt;link rel="import"
+		     href="path/to/broadway-heading.html"&gt;
+
+		&lt;style&gt;
+			broadway-heading h4 {
+				margin: 0;
+			}
+		&lt;/style&gt;
 	&lt;/head&gt;
 	&lt;body&gt;
-&lt;broadway-heading&gt;
-	&lt;h1&gt;Heading text&lt;/h1&gt;
+
+&lt;broadway-heading color="red"&gt;
+	&lt;h4&gt;Heading text&lt;/h4&gt;
+	&lt;!--
+		h4 is used as an exmaple. Any valid html
+		is acceptable, but the component was
+		designed to be used with headings
+	--&gt;
 &lt;/broadway-heading&gt;
+
 	&lt;/body&gt;
 &lt;/html&gt;</warpech-prism>
+		<h3>Output</h3>
+		<broadway-heading color="red" class="example">
+			<h4>Heading text</h4>
+		</broadway-heading>
+		<h3>Options</h3>
+		<dl><dt>color</dt><dd>The css color-value to apply to the text and borders</dd></dl>
 	</section>
 
 	<footer>
