@@ -1,6 +1,6 @@
 {
   "name": "broadway-heading",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "authors": [
     "Daniel Llewellyn <daniel@bowlhat.net>"
   ],
@@ -27,6 +27,6 @@
     "tests"
   ],
   "dependencies": {
-    "polymer": "~0.3.3"
+    "polymer": "^0.5.0"
   }
 }
