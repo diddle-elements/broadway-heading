@@ -1,81 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Broadway Heading Demo</title>
-	<style>
-		body {
-			background-color: #ccf;
-			margin: 0;
-		}
-		section, footer {
-			max-width: 540px;
-			margin: 0 auto;
-			padding: 20px;
-		}
-		footer {
-			font-size: small;
-		}
-		#page-title h1 {
-			text-transform: uppercase;
-			font-family: arial, sans-serif;
-			margin: 0;
-		}
-		broadway-heading.example h4 {
-			margin: 0;
-		}
-	</style>
-	<script src="../webcomponentsjs/webcomponents.js"></script>
-	<link rel="import" href="broadway-heading.html" />
-	<link rel="import" href="../github-ribbon/src/github-ribbon.html" />
-	<link rel="import" href="../warpech-prism/warpech-prism.html" />
+	<script src="../webcomponentsjs/webcomponents.min.js"></script>
+	<link rel="import" href="../iron-component-page/iron-component-page.html" />
 </head>
-<body unresolved>
-	<github-ribbon user="diddledan" repo="broadway-heading" color="red" position="left"></github-ribbon>
+<body>
 
-	<section>
-		<broadway-heading id="page-title" color="white">
-			<h1>Broadway Heading</h1>
-		</broadway-heading>
-		<h2>A web component</h2>
-		<p>The above header is an example of the <code>&lt;broadway-heading&gt;</code> web component</p>
-		<h2>Example Usage</h2>
-<warpech-prism language="markup">&lt;html&gt;
-	&lt;head&gt;
-		&lt;script src="path/to/platform.js"&gt;
-		&lt;/script&gt;
+	<iron-component-page></iron-component-page>
 
-		&lt;link rel="import"
-		     href="path/to/broadway-heading.html"&gt;
-
-		&lt;style&gt;
-			broadway-heading h4 {
-				margin: 0;
-			}
-		&lt;/style&gt;
-	&lt;/head&gt;
-	&lt;body&gt;
-
-&lt;broadway-heading color="red"&gt;
-	&lt;h4&gt;Heading text&lt;/h4&gt;
-	&lt;!--
-		h4 is used as an exmaple. Any valid html
-		is acceptable, but the component was
-		designed to be used with headings
-	--&gt;
-&lt;/broadway-heading&gt;
-
-	&lt;/body&gt;
-&lt;/html&gt;</warpech-prism>
-		<h3>Output</h3>
-		<broadway-heading color="red" class="example">
-			<h4>Heading text</h4>
-		</broadway-heading>
-		<h3>Options</h3>
-		<dl><dt>color</dt><dd>The css color-value to apply to the text and borders</dd></dl>
-	</section>
-
-	<footer>
-		Copyright &copy; 2014 <em>Daniel Llewellyn</em> of <a href="https://bowlhat.net/">Bowl Hat</a> and <a href="http://www.bang-on.net/">Bang Communications</a>
-	</footer>
 </body>
 </html>

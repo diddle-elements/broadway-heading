@@ -7,7 +7,7 @@ Broadway Heading
 
 <link rel="import" href="../polymer/polymer.html" />
 
-<polymer-element name="broadway-heading" attributes="color" noscript>
+<dom-module id="broadway-heading">
 	<template>
 		<style>
 			.heading {
@@ -39,8 +39,38 @@ Broadway Heading
 			.heading:before { right: 100%; }
 			.heading:after { left: 100%; }
 		</style>
-		<div class="heading" style="color: {{color}}; border-color: {{color}}">
+		<div class="heading" style="[[_computeStyles(color)]]">
 			<content></content>
 		</div>
 	</template>
-</polymer-element>
+</dom-module>
+<script>
+	/**
+	 * A heading web component in the style of 1920's broadway signs.
+	 *
+	 * Example:
+	 *
+	 *     <broadway-heading color="red" class="example">
+	 *         <h1>Heading text</h1>
+	 *     </broadway-heading>
+	 */
+	Polymer({
+		is: "broadway-heading",
+		properties: {
+			/**
+			 * specifies the colour to be used for the borders and text
+			 */
+			color: {
+				type: "String",
+				value: "#000000"
+			}
+		},
+		/**
+		 * @param {string} color the color to generate styles for
+		 * @return {string} the css properties for border and text color with the input value embedded
+		 */
+		_computeStyles: function(color) {
+			return 'color: ' + color + '; border-color: ' + color + ';';
+		}
+	});
+</script>
