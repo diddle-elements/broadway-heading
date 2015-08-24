@@ -9,6 +9,18 @@ Broadway Heading
 
 <dom-module id="broadway-heading">
 	<style>
+		:host {
+			display: block;
+		}
+		:host:before {
+			content: "";
+			display: table;
+		}
+		:host:after {
+			clear: both;
+			content: "";
+			display: table;
+		}
 		.heading {
 			width: 50%;
 			margin-left: auto;
@@ -39,7 +51,7 @@ Broadway Heading
 		.heading:after { left: 100%; }
 	</style>
 	<template>
-		<div class="heading" style="[[_computeStyles(color)]]">
+		<div class="heading" style$="[[_computeStyles(color)]]">
 			<content></content>
 		</div>
 	</template>
