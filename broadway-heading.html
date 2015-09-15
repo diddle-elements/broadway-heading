@@ -22,13 +22,17 @@ Broadway Heading
 			display: table;
 		}
 		.heading {
+			color: var(--broadway-heading-color, #000);
+			border-color: var(--broadway-heading-color, #000);
+
 			width: 50%;
 			margin-left: auto;
 			margin-right: auto;
 			text-align: center;
 			position: relative;
 			padding: 0.2em 0.6em;
-			border: 1px solid #000;
+			border-width: 1px;
+			border-style: solid;
 			-webkit-border-radius: 2em;
 			-moz-border-radius: 2em;
 			-ms-border-radius: 2em;
@@ -51,7 +55,7 @@ Broadway Heading
 		.heading:after { left: 100%; }
 	</style>
 	<template>
-		<div class="heading" style$="[[_computeStyles(color)]]">
+		<div class="heading">
 			<content></content>
 		</div>
 	</template>
@@ -62,27 +66,14 @@ Broadway Heading
 	 *
 	 * Example:
 	 *
-	 *     <broadway-heading color="red" class="example">
+	 *     <style is="custom-style">
+	 *         broadway-heading {
+	 *             --broadway-heading-color: #f00;
+	 *         }
+	 *     </style>
+	 *     <broadway-heading class="example">
 	 *         <h1>Heading text</h1>
 	 *     </broadway-heading>
 	 */
-	Polymer({
-		is: "broadway-heading",
-		properties: {
-			/**
-			 * specifies the colour to be used for the borders and text
-			 */
-			color: {
-				type: "String",
-				value: "#000000"
-			}
-		},
-		/**
-		 * @param {string} color the color to generate styles for
-		 * @return {string} the css properties for border and text color with the input value embedded
-		 */
-		_computeStyles: function(color) {
-			return 'color: ' + color + '; border-color: ' + color + ';';
-		}
-	});
+	Polymer({ is: "broadway-heading" });
 </script>

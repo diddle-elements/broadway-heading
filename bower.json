@@ -1,6 +1,6 @@
 {
   "name": "broadway-heading",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "authors": [
     "Daniel Llewellyn <daniel@bowlhat.net>"
   ],
@@ -31,7 +31,7 @@
     "polymer": "Polymer/polymer#^1.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^0.9.3",
+    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
     "web-component-tester": "*"
   }
 }
