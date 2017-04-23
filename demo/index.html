@@ -1,19 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<script src="../../webcomponentsjs/webcomponents-lite.min.js"></script>
-	<link rel="import" href="../broadway-heading.html" />
-</head>
-<body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
 
-	<style is="custom-style">
-		broadway-heading {
-			--broadway-heading-color: #f00;
-		}
-	</style>
-	<broadway-heading class="example">
-		<h1>Heading text</h1>
-	</broadway-heading>
+    <title>broadway-heading demo</title>
 
-</body>
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../broadway-heading.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic broadway-heading demo</h3>
+      <demo-snippet>
+        <template>
+          <style is="custom-style">
+            broadway-heading {
+              --broadway-heading-color: #f00;
+            }
+          </style>
+          <broadway-heading class="example">
+            <h1>Heading text</h1>
+          </broadway-heading>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
 </html>
