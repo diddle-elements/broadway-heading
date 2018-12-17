@@ -6,10 +6,10 @@
 
     <title>broadway-heading test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
-
-    <link rel="import" href="../broadway-heading.html">
+    <script src="../../../@webcomponents/webcomponentsjs/webcomponents-bundle.js"></script>
+    <script src="../../../chai/chai.js"></script>
+    <script src="../../../mocha/mocha.js"></script>
+    <script src="../../../wct-mocha/wct-mocha.js"></script>
   </head>
   <body>
     <test-fixture id="basic">
@@ -18,11 +18,28 @@
       </template>
     </test-fixture>
 
-    <script>
+    <script type="module">
+      import '@polymer/test-fixture';
+      import 'axe-core/axe.min.js';
+      import {axeReport} from 'pwa-helpers/axe-report.js';
+      import '../broadway-heading.js';
       suite('broadway-heading', function() {
+        let element;
+        setup(() => {
+          element = fixture('basic');
+          return element.updateComplete;
+        });
+        
         test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'broadway-heading');
+          assert.notEqual(typeof element.shadowRoot, 'undefined');
+        });
+        test('has dimensions', function() {
+          assert.notEqual(element.getBoundingClientRect().width, 0);
+          assert.notEqual(element.getBoundingClientRect().height, 0);
+        });
+
+        test('a11y', function() {
+          return axeReport(element);
         });
       });
     </script>
