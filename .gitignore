@@ -1,3 +1,20 @@
-bower_components
+## editors
+/.idea
+/.vscode
 
-node_modules
+## system files
+.DS_Store
+
+## npm
+/node_modules/
+/npm-debug.log
+
+## testing
+/coverage/
+
+## temp folders
+/.tmp/
+
+# build
+/_site/
+/dist/

@@ -1,0 +1,23 @@
+{
+  "version": "experimental",
+  "tags": [
+    {
+      "name": "broadway-heading",
+      "path": "./broadway-heading.js",
+      "description": "A heading web component in the style of 1920's Broadway and British-Rail Station signs.",
+      "slots": [
+        {
+          "name": "",
+          "description": "Content to be placed inside the sign"
+        }
+      ],
+      "cssProperties": [
+        {
+          "name": "--broadway-heading-color",
+          "description": "Controls the color of the text and borders",
+          "type": "color"
+        }
+      ]
+    }
+  ]
+}

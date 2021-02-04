@@ -1,5 +1,10 @@
 {
-  "description": "1920&#39;s style broadway header",
+  "name": "@diddledan/broadway-heading",
+  "version": "1.0.0",
+  "description": "1920&#39;s style broadway header webcomponent",
+  "author": "Daniel Llewellyn <daniel@bowlhat.net>",
+  "homepage": "https://diddledan.github.io/broadway-heading",
+  "license": "MIT",
   "keywords": [
     "web-components",
     "broadway",
@@ -12,30 +17,51 @@
     "1920's",
     "twenties"
   ],
-  "homepage": "http://diddledan.github.io/broadway-heading",
-  "name": "@diddledan/broadway-heading",
-  "version": "1.0.0",
-  "resolutions": {
-    "inherits": "2.0.3",
-    "samsam": "1.1.3",
-    "supports-color": "3.1.2",
-    "type-detect": "1.0.0"
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
+    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
+    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
+    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
+    "format": "npm run format:eslint && npm run format:prettier",
+    "storybook": "start-storybook",
+    "storybook:build": "build-storybook"
   },
-  "main": "broadway-heading.js",
-  "author": "Daniel Llewellyn <daniel@bowlhat.net>",
-  "license": "MIT",
   "dependencies": {
-    "@polymer/lit-element": "^0.7.1",
-    "pwa-helpers": "^0.9.1"
+    "lit-html": "^1.1.2",
+    "lit-element": "^2.2.1"
   },
   "devDependencies": {
-    "@polymer/iron-component-page": "^4.0.1",
-    "@polymer/iron-demo-helpers": "^3.1.0",
-    "@polymer/test-fixture": "^4.0.2",
-    "@webcomponents/webcomponentsjs": "^2.4.3",
-    "axe-core": "^3.5.3",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "wct-mocha": "^1.0.1"
+    "es-dev-server": "^1.23.0",
+    "eslint": "^6.1.0",
+    "@open-wc/eslint-config": "^2.0.0",
+    "prettier": "^2.0.4",
+    "husky": "^1.0.0",
+    "lint-staged": "^8.0.0",
+    "@open-wc/demoing-storybook": "^2.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
   }
 }

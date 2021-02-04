@@ -1,38 +1,70 @@
-# \<broadway-heading\>
+# \<broadway-heading>
 
-1920&#39;s style broadway header
+A heading web component in the style of 1920's Broadway and British-Rail Station signs.
 
-## Install the Polymer-CLI
+![Broadway Heading component preview](preview.png)
 
-First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
-
-## Viewing Your Application
-
-```
-$ polymer serve
+## Installation
+```bash
+npm i broadway-heading
 ```
 
-## Building Your Application
+## Usage
+```html
+<script type="module">
+  import 'broadway-heading/broadway-heading.js';
+</script>
 
-```
-$ polymer build
-```
-
-This will create a `build/` folder with `bundled/` and `unbundled/` sub-folders
-containing a bundled (Vulcanized) and unbundled builds, both run through HTML,
-CSS, and JS optimizers.
-
-You can serve the built versions by giving `polymer serve` a folder to serve
-from:
-
-```
-$ polymer serve build/bundled
+<broadway-heading></broadway-heading>
 ```
 
-## Running Tests
-
+## Linting with ESLint, Prettier, and Types
+To scan the project for linting errors, run
+```bash
+npm run lint
 ```
-$ polymer test
+
+You can lint with ESLint and Prettier individually as well
+```bash
+npm run lint:eslint
+```
+```bash
+npm run lint:prettier
 ```
 
-Your application is already set up to be tested via [web-component-tester](https://github.com/Polymer/web-component-tester). Run `polymer test` to run your application's test suite locally.
+To automatically fix many linting errors, run
+```bash
+npm run format
+```
+
+You can format using ESLint and Prettier individually as well
+```bash
+npm run format:eslint
+```
+```bash
+npm run format:prettier
+```
+
+## Demoing with Storybook
+To run a local instance of Storybook for your component, run
+```bash
+npm run storybook
+```
+
+To build a production version of Storybook, run
+```bash
+npm run storybook:build
+```
+
+
+## Tooling configs
+
+For most of the tools, the configuration is in the `package.json` to reduce the amount of files in your project.
+
+If you customize the configuration a lot, you can consider moving them to individual files.
+
+## Local Demo with `es-dev-server`
+```bash
+npm start
+```
+To run a local development server that serves the basic demo located in `demo/index.html`
