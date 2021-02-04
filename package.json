@@ -20,32 +20,30 @@
   "main": "index.js",
   "module": "index.js",
   "scripts": {
-    "start": "es-dev-server --app-index demo/index.html --node-resolve --open --watch",
-    "lint:eslint": "eslint --ext .js,.html . --ignore-path .gitignore",
-    "format:eslint": "eslint --ext .js,.html . --fix --ignore-path .gitignore",
-    "lint:prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
-    "format:prettier": "prettier \"**/*.js\" --write --ignore-path .gitignore",
-    "lint": "npm run lint:eslint && npm run lint:prettier",
-    "format": "npm run format:eslint && npm run format:prettier",
-    "storybook": "start-storybook",
+    "start": "web-dev-server",
+    "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "storybook": "web-dev-server -c .storybook/server.mjs",
     "storybook:build": "build-storybook"
   },
   "dependencies": {
-    "lit-element": "^2.4.0",
-    "lit-html": "^1.3.0"
+    "lit-html": "^1.3.0",
+    "lit-element": "^2.4.0"
   },
   "devDependencies": {
-    "@open-wc/demoing-storybook": "^2.4.7",
+    "@web/dev-server": "^0.1.5",
+    "eslint": "^7.18.0",
     "@open-wc/eslint-config": "^4.2.0",
-    "es-dev-server": "^2.1.0",
-    "eslint": "^7.19.0",
+    "prettier": "^2.2.1",
+    "eslint-config-prettier": "^7.2.0",
     "husky": "^4.3.8",
     "lint-staged": "^10.5.3",
-    "prettier": "^2.0.4"
+    "@web/dev-server-storybook": "^0.3.4"
   },
   "eslintConfig": {
     "extends": [
-      "@open-wc/eslint-config"
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
     ]
   },
   "prettier": {
