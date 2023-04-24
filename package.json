@@ -36,8 +36,8 @@
     "@web/dev-server-storybook": "^0.3.8",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.3",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.1",
     "prettier": "^2.2.1"
   },
   "eslintConfig": {
